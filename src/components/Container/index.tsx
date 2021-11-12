@@ -3,7 +3,7 @@ import * as React from 'react'
 import './style.scss'
 
 type ContainerProps = {
-  children: JSX.Element,
+  children?: any,
 }
 
 const Container: React.FC<ContainerProps> = ({ children }): JSX.Element => {

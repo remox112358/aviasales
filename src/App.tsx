@@ -1,8 +1,19 @@
 import * as React from 'react'
 
+import { 
+  Logo, 
+  Container 
+} from './components'
+
+import './scss/style.scss'
+
 const App: React.FC = (): JSX.Element => {
   return (
-    <h1>app</h1>
+    <div className="wrapper">
+      <Container>
+        <Logo />
+      </Container>
+    </div>
   )
 }
 
