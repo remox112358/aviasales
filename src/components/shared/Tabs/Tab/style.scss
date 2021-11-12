@@ -1,0 +1,45 @@
+@import '../../../../scss/variables.scss';
+
+.tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+
+  background-color: map-get($COLORS, 'white');
+  
+  transition-duration: .3s;
+  transition-property: color, border-right-color, background-color;
+
+  &:not(:last-child) {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #DFE5EC;
+  }
+
+  &.active {
+    color: map-get($COLORS, 'white');
+    background-color: map-get($COLORS, 'primary');
+    border-right-color: map-get($COLORS, 'primary');
+  }
+
+  &:hover {
+    color: map-get($COLORS, 'white');
+    background-color: map-get($COLORS, 'primary');
+    border-right-color: map-get($COLORS, 'primary');
+  }
+
+  &:active {
+    background-color: darken(map-get($COLORS, 'primary'), 10%);
+  }
+}

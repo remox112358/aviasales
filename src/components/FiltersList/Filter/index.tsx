@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Checkbox } from '../../index'
+import { Checkbox } from '../../shared'
 
 import './style.scss'
 

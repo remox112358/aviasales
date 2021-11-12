@@ -3,7 +3,11 @@ import * as React from 'react'
 import { 
   Logo,
   Container,
-  FiltersList
+} from './components/shared'
+
+import { 
+  FilterTabs,
+  FiltersList 
 } from './components'
 
 import './scss/style.scss'
@@ -16,6 +20,9 @@ const App: React.FC = (): JSX.Element => {
         <div className="content">
           <div className="content__sidebar">
             <FiltersList />
+          </div>
+          <div className="content__inner">
+            <FilterTabs />
           </div>
         </div>
       </Container>
