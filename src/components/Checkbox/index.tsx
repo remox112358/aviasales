@@ -10,17 +10,8 @@ type CheckboxProps = {
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({ checked = false, className = '' }): JSX.Element => {
-  const [isChecked, setIsChecked] = useState(checked)
-  
-  const clickHandler: React.MouseEventHandler<HTMLDivElement> = (): void => {
-    setIsChecked(!isChecked)
-  }
-
   return (
-    <div
-      onClick={clickHandler} 
-      className={`checkbox ${isChecked ? 'checked' : ''} ${className}`}
-    >
+    <div className={`checkbox ${checked ? 'checked' : ''} ${className}`}>
       <Icon name="check" />
     </div>
   )
