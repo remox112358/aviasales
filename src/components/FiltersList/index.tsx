@@ -7,7 +7,7 @@ import './style.scss'
 
 const FiltersList: React.FC = (): JSX.Element => {
   return (
-    <Card>
+    <Card className="card--filters">
       <div className="filters">
         <span className="filters__title">Количество пересадок</span>
         <div className="filters__list">
