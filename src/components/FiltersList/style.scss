@@ -1,0 +1,14 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+  }
+}

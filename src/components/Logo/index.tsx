@@ -4,9 +4,13 @@ import logo from '../../assets/images/logo.svg'
 
 import './style.scss'
 
-const Logo: React.FC = (): JSX.Element => {
+type LogoProps = {
+  className?: string,
+}
+
+const Logo: React.FC<LogoProps> = ({ className = '' }): JSX.Element => {
   return (
-    <div className="logo">
+    <div className={`logo ${className}`}>
       <img src={logo} alt="Logo" />
     </div>
   )

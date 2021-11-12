@@ -4,11 +4,12 @@ import './style.scss'
 
 type ContainerProps = {
   children?: any,
+  className?: string,
 }
 
-const Container: React.FC<ContainerProps> = ({ children }): JSX.Element => {
+const Container: React.FC<ContainerProps> = ({ children, className = '' }): JSX.Element => {
   return (
-    <div className="container">
+    <div className={`container ${className}`}>
       { children }
     </div>
   )

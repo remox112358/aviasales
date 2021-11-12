@@ -1,0 +1,40 @@
+@import '../../scss/variables.scss';
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+
+  border-width: 1px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: #9ABBCE;
+
+  transition-duration: .2s;
+  transition-property: border-color;
+
+  &.checked {
+    border-color: map-get($COLORS, 'primary');
+
+    .icon {
+      opacity: 1;
+    }
+  }
+  
+  .icon {
+    opacity: 0;
+
+    width: 12px;
+    height: 8px;
+
+    transition-duration: .2s;
+    transition-property: opacity;
+    
+    color: map-get($COLORS, 'primary');
+  }
+}
