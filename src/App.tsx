@@ -7,7 +7,8 @@ import {
 
 import { 
   FilterTabs,
-  FiltersList 
+  FiltersList,
+  TicketsList
 } from './components'
 
 import './scss/style.scss'
@@ -23,6 +24,7 @@ const App: React.FC = (): JSX.Element => {
           </div>
           <div className="content__inner">
             <FilterTabs />
+            <TicketsList />
           </div>
         </div>
       </Container>

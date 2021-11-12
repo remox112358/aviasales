@@ -33,5 +33,14 @@ body {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 230px auto;
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+
+      .tabs {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
