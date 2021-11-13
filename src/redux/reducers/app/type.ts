@@ -1,14 +1,15 @@
 export enum AppActions {
   APP_SET_ERROR = 'APP_SET_ERROR',
   APP_SET_LOADING = 'APP_SET_LOADING',
+  APP_TOGGLE_FILTER = 'APP_TOGGLE_FILTER',
 }
 
 export enum Filter {
-  ALL = -1,
-  NO_TRANSFERS = 0,
-  ONE_TRANSFER = 1,
-  TWO_TRANSFERS = 2,
-  THREE_TRANSFERS = 3,
+  ALL,
+  NO_TRANSFERS,
+  ONE_TRANSFER,
+  TWO_TRANSFERS,
+  THREE_TRANSFERS,
 }
 
 export type Sort = 'cheap' | 'quick'
@@ -45,5 +46,11 @@ export type AppSetLoadingActionType = {
   payload: boolean,
 }
 
+export type AppToggleFilterActionType = {
+  type: AppActions.APP_TOGGLE_FILTER,
+  payload: Filter,
+}
+
 export type AppActionType = AppSetErrorActionType |
-                            AppSetLoadingActionType
+                            AppSetLoadingActionType |
+                            AppToggleFilterActionType

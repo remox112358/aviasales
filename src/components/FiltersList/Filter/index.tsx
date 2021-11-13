@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+
+import { appToggleFilter } from '../../../redux/reducers/app/actions'
+import { Filter as FilterType } from '../../../redux/reducers/app/type'
 
 import { Checkbox } from '../../shared'
 
@@ -7,21 +11,22 @@ import './style.scss'
 type FilterProps = {
   name: string,
   active?: boolean,
+  value: FilterType,
 }
 
-const Filter: React.FC<FilterProps> = ({ name, active = false }): JSX.Element => {
-  const [isActive, setIsActive] = useState(active)
+const Filter: React.FC<FilterProps> = ({ name, value, active = false }): JSX.Element => {
+  const dispatch = useDispatch()
   
   const clickHandler: React.MouseEventHandler<HTMLDivElement> = (): void => {
-    setIsActive(!isActive)
+    dispatch(appToggleFilter(value))
   }
   
   return (
     <div
       onClick={clickHandler} 
-      className={`filter ${isActive ? 'active' : ''}`}
+      className={`filter ${active ? 'active' : ''}`}
     >
-      <Checkbox checked={isActive} />
+      <Checkbox checked={active} />
       <span className="filter__name">{ name }</span>
     </div>
   )
