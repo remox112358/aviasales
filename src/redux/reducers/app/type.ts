@@ -1,4 +1,5 @@
 export enum AppActions {
+  APP_SET_SORT = 'APP_SET_SORT',
   APP_SET_ERROR = 'APP_SET_ERROR',
   APP_SET_LOADING = 'APP_SET_LOADING',
   APP_TOGGLE_FILTER = 'APP_TOGGLE_FILTER',
@@ -12,7 +13,11 @@ export enum Filter {
   THREE_TRANSFERS,
 }
 
-export type Sort = 'cheap' | 'quick'
+export enum Sort {
+  CHEAP,
+  QUICK,
+  OPTIMAL,
+}
 
 export type Flight = {
   date: string,
@@ -36,6 +41,11 @@ export type AppState = {
   tickets: Array<Ticket>,
 }
 
+export type AppSetSortActionType = {
+  type: AppActions.APP_SET_SORT,
+  payload: Sort,
+}
+
 export type AppSetErrorActionType = {
   type: AppActions.APP_SET_ERROR,
   payload: boolean,
@@ -51,6 +61,7 @@ export type AppToggleFilterActionType = {
   payload: Filter,
 }
 
-export type AppActionType = AppSetErrorActionType |
+export type AppActionType = AppSetSortActionType |
+                            AppSetErrorActionType |
                             AppSetLoadingActionType |
                             AppToggleFilterActionType

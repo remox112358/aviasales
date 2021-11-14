@@ -1,4 +1,16 @@
-import { AppActions, AppActionType, Filter } from './type'
+import { 
+  Sort,
+  Filter, 
+  AppActions, 
+  AppActionType 
+} from './type'
+
+export const appSetSort = (payload: Sort): AppActionType => {
+  return {
+    type: AppActions.APP_SET_SORT,
+    payload,
+  }
+}
 
 export const appSetError = (payload: boolean): AppActionType => {
   return {
