@@ -23,7 +23,7 @@ yarn install
 yarn run dev
 ```
 
-### Сборка UI
+### Сборка
 Используйте команду
 ```
 yarn run build
