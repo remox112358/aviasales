@@ -26,6 +26,13 @@ export const appSetLoading = (payload: boolean): AppActionType => {
   }
 }
 
+export const appSetSearchID = (payload: string): AppActionType => {
+  return {
+    type: AppActions.APP_SET_SEARCH_ID,
+    payload,
+  }
+}
+
 export const appToggleFilter = (payload: Filter): AppActionType => {
   return {
     type: AppActions.APP_TOGGLE_FILTER,

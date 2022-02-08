@@ -10,6 +10,7 @@ export const initialState: AppState = {
   tickets: [],
   error: false,
   loading: false,
+  searchID: null,
   sort: Sort.CHEAP,
 }
 
@@ -31,6 +32,12 @@ export const appReducer = (state: AppState = initialState, action: AppActionType
       return {
         ...state,
         loading: action.payload,
+      }
+    }
+    case AppActions.APP_SET_SEARCH_ID: {
+      return {
+        ...state,
+        searchID: action.payload,
       }
     }
     case AppActions.APP_TOGGLE_FILTER: {

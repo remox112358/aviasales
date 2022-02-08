@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect } from 'react'
 
 import { 
   Logo,
@@ -8,12 +9,23 @@ import {
 import { 
   FilterTabs,
   FiltersList,
-  TicketsList
+  TicketsList,
 } from './components'
+
+import { API } from './services'
 
 import './scss/style.scss'
 
 const App: React.FC = (): JSX.Element => {
+  useEffect(() => {
+    init()
+  }, [])
+
+  const init = async () => {
+    await API.init()
+    await API.load()
+  }
+
   return (
     <div className="wrapper">
       <Container>

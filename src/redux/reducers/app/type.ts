@@ -3,6 +3,7 @@ export enum AppActions {
   APP_SET_ERROR = 'APP_SET_ERROR',
   APP_SET_LOADING = 'APP_SET_LOADING',
   APP_TOGGLE_FILTER = 'APP_TOGGLE_FILTER',
+  APP_SET_SEARCH_ID = 'APP_SET_SEARCH_ID',
 }
 
 export enum Filter {
@@ -39,6 +40,7 @@ export type AppState = {
   loading: boolean,
   filters: Array<Filter>,
   tickets: Array<Ticket>,
+  searchID: string | null,
 }
 
 export type AppSetSortActionType = {
@@ -56,6 +58,11 @@ export type AppSetLoadingActionType = {
   payload: boolean,
 }
 
+export type AppSetSearchIDActionType = {
+  type: AppActions.APP_SET_SEARCH_ID,
+  payload: string,
+}
+
 export type AppToggleFilterActionType = {
   type: AppActions.APP_TOGGLE_FILTER,
   payload: Filter,
@@ -64,4 +71,5 @@ export type AppToggleFilterActionType = {
 export type AppActionType = AppSetSortActionType |
                             AppSetErrorActionType |
                             AppSetLoadingActionType |
+                            AppSetSearchIDActionType |
                             AppToggleFilterActionType
